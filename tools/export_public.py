@@ -3,6 +3,7 @@
     python tools/export_public.py                 # into a new temp folder; prints its path
     python tools/export_public.py --out DIR       # into DIR (must not exist yet)
     python tools/export_public.py --check         # …then run the test suite inside it
+    python tools/export_public.py --update public --message "…"   # sync the public checkout, commit
 
 The file list starts from what git would keep (``git ls-files --cached --others
 --exclude-standard``), so everything ignored — songs/ (scanned Real Book pages),
@@ -66,11 +67,15 @@ def public_files(files: list[str]) -> list[str]:
     return keep
 
 
-def export(out: Path, root: Path = ROOT) -> list[str]:
-    """Copy the public tree into ``out`` and make it a fresh repo; returns the file list."""
-    if out.exists() and any(out.iterdir()):
-        raise SystemExit(f"{out} already exists and is not empty")
+def assemble(out: Path, root: Path = ROOT) -> list[str]:
+    """Copy the public tree (and the release swaps) into ``out``; returns the file list.
+
+    Refuses before copying anything when a private path made it into the list.
+    """
     files = public_files(candidate_files(root))
+    leaked = leaks(files)
+    if leaked:
+        raise SystemExit("refusing: private files in the export: " + ", ".join(leaked))
     for rel in files:
         dest = out / rel
         dest.parent.mkdir(parents=True, exist_ok=True)
@@ -79,12 +84,56 @@ def export(out: Path, root: Path = ROOT) -> list[str]:
         if (root / src).is_file():
             (out / dest).parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(root / src, out / dest)
+    return files + [dest for src, dest in SWAPS.items() if (root / src).is_file()]
+
+
+def leaks(files: list[str]) -> list[str]:
+    """Paths that must never be public, whatever the allowlist says."""
+    return [f for f in files if f.startswith(("songs/", "sessions/", "bundles/", "analysis/"))
+            or f.endswith((".logicx", ".sf2")) or "songs-demo" in f]
+
+
+def export(out: Path, root: Path = ROOT) -> list[str]:
+    """Copy the public tree into ``out`` and make it a fresh repo; returns the file list."""
+    if out.exists() and any(out.iterdir()):
+        raise SystemExit(f"{out} already exists and is not empty")
+    files = assemble(out, root)
     subprocess.run(["git", "init", "-q", "-b", "main"], cwd=out, check=True)
     subprocess.run(["git", "add", "-A"], cwd=out, check=True)
     message = ("First public release: chord + song practice, in the browser or with a local "
                "server\n\nCo-Authored-By: Claude Opus 5.5 (1M context) <noreply@anthropic.com>\n")
     subprocess.run(["git", "commit", "-q", "-m", message], cwd=out, check=True)
     return files
+
+
+def update(checkout: Path, message: str, root: Path = ROOT) -> tuple[list[str], bool]:
+    """Re-export into the public repo's existing checkout: one new commit, history kept.
+
+    The export goes to a temp folder first; then every file the checkout tracks that the
+    export no longer has is removed, every exported file is copied over, and what changed
+    is committed. Nothing is pushed. Returns (the file list, whether a commit was made).
+    """
+    if not (checkout / ".git").exists():
+        raise SystemExit(f"{checkout} is not a git checkout (make the first one with --out)")
+    fresh = Path(tempfile.mkdtemp(prefix="music-public-"))
+    files = assemble(fresh, root)
+    tracked = subprocess.run(["git", "ls-files"], cwd=checkout, capture_output=True, text=True,
+                             check=True).stdout.splitlines()
+    keep = set(files)
+    for rel in tracked:
+        if rel not in keep:
+            subprocess.run(["git", "rm", "-q", "--", rel], cwd=checkout, check=True)
+    for rel in files:
+        dest = checkout / rel
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(fresh / rel, dest)
+    shutil.rmtree(fresh, ignore_errors=True)
+    subprocess.run(["git", "add", "-A"], cwd=checkout, check=True)
+    if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=checkout).returncode == 0:
+        return files, False
+    body = f"{message}\n\nCo-Authored-By: Claude Opus 5.5 (1M context) <noreply@anthropic.com>\n"
+    subprocess.run(["git", "commit", "-q", "-m", body], cwd=checkout, check=True)
+    return files, True
 
 
 def check(out: Path) -> int:
@@ -103,17 +152,24 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--out", type=Path, help="target folder (default: a new temp folder)")
+    parser.add_argument("--update", type=Path, metavar="CHECKOUT",
+                        help="re-export into the public repo's checkout and commit (nothing is pushed)")
+    parser.add_argument("--message", default="Update from the private repo",
+                        help="the commit message for --update")
     parser.add_argument("--check", action="store_true", help="run the tests inside the export")
     args = parser.parse_args(argv)
-    out = args.out or Path(tempfile.mkdtemp(prefix="music-public-"))
-    files = export(out)
-    leaked = [f for f in files if f.startswith(("songs/", "sessions/", "bundles/", "analysis/"))
-              or f.endswith((".logicx", ".sf2")) or "songs-demo" in f]
+    if args.update:
+        files, committed = update(args.update, args.message)
+        where, what = args.update, "committed, nothing pushed" if committed else "already current"
+    else:
+        where = args.out or Path(tempfile.mkdtemp(prefix="music-public-"))
+        files, what = export(where), "fresh repo, no remote, nothing pushed"
+    leaked = leaks(files)
     if leaked:
         print("refusing: private files in the export: " + ", ".join(leaked), file=sys.stderr)
         return 1
-    print(f"exported {len(files)} files to {out} (fresh repo, no remote, nothing pushed)")
-    return check(out) if args.check else 0
+    print(f"exported {len(files)} files to {where} ({what})")
+    return check(where) if args.check else 0
 
 
 if __name__ == "__main__":

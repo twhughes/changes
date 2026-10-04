@@ -24,8 +24,9 @@ if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
   git fetch -q origin gh-pages
   git worktree add -q -B gh-pages "$WT" origin/gh-pages
 else
+  git branch -D gh-pages >/dev/null 2>&1 || true     # a dry run's leftover: start the orphan fresh
   git worktree add -q --detach "$WT"
-  (cd "$WT" && git checkout -q --orphan gh-pages && git rm -rqf . >/dev/null 2>&1 || true)
+  (cd "$WT" && git checkout -q --orphan gh-pages && { git rm -rqf . >/dev/null 2>&1 || true; })
 fi
 rsync -a --delete --exclude .git site/ "$WT/"
 cd "$WT"

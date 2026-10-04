@@ -39,6 +39,11 @@ STATIC = ROOT / "music" / "web" / "static"
 DEMO_SONGS = ROOT / "demo-songs"
 PRIVATE_SONGS = ROOT / "songs"
 META = '<meta name="music-static" content="1">'
+# The public page goes by the project's public name (github.com/twhughes/changes); the local app
+# stays "music". The README's icon is the tab's icon too.
+PUBLIC_NAME = "Changes"
+ICON = ROOT / "docs" / "icon.svg"
+ICON_LINK = '<link rel="icon" href="icon.svg" type="image/svg+xml">'
 
 SKIP_DIRS = {"__pycache__"}
 SKIP_FILES = {"dom-stub.mjs", "staff-cli.mjs"}            # development tools
@@ -108,6 +113,11 @@ def _mark(index: Path) -> None:
         if not m:
             raise SystemExit("index.html has no <head> line to mark")
         html = html[:m.end(0)] + META + "\n" + m.group(1) + html[m.end(0):]
+    html = re.sub(r"<title>[^<]*</title>", f"<title>{PUBLIC_NAME}</title>", html, count=1)
+    html = html.replace('<span class="brand">music</span>',
+                        f'<span class="brand">{PUBLIC_NAME.lower()}</span>', 1)
+    if ICON_LINK not in html:
+        html = html.replace(META, META + "\n  " + ICON_LINK, 1)
     if re.search(r"""(?:src|href)=["']/""", html):
         raise SystemExit("index.html loads an absolute path; Pages serves the page under /<repo>/")
     index.write_text(html, encoding="utf-8")
@@ -135,6 +145,8 @@ def build(out: Path, songs: Path = DEMO_SONGS) -> list[str]:
         shutil.copy2(src, dst)
         copied.append(rel)
     _mark(out / "index.html")
+    shutil.copy2(ICON, out / "icon.svg")
+    copied.append("icon.svg")
 
     sound = sound_plan()
     set_dir = _sample_set()
