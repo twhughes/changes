@@ -1,0 +1,18 @@
+# Public domain: George Gershwin's "I Got Rhythm" (Girl Crazy, 1930) entered the US public
+# domain on 1 January 2026 (and the EU's long before). These are the changes as jazz
+# players commonly play them ("rhythm changes"), written out for this app — no scan.
+title: I Got Rhythm
+composer: George Gershwin (1930)
+style: Medium Up Swing
+time: 4/4
+key: Bb
+checked: 2026-10-04
+form: A A B A
+
+[A]
+| Bbmaj7 G-7 | C-7 F7 | D-7 G-7 | C-7 F7 |
+| F-7 Bb7 | Ebmaj7 Ab7 | 1. D-7 G-7 | 1. C-7 F7 | 2. C-7 F7 | 2. Bb6 |
+
+[B]
+| D7 | D7 | G7 | G7 |
+| C7 | C7 | F7 | F7 |

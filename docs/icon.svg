@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72">
+  <!-- Changes: a C major triad stacked on a staff, each note in Tyler's synesthesia color
+       (C white, E green, G blue — the palette in music/web/static/colors.js). -->
+  <rect width="72" height="72" rx="16" fill="#17171a"/>
+  <g stroke="#3a3a42" stroke-width="1.5">
+    <line x1="12" y1="22" x2="60" y2="22"/><line x1="12" y1="30" x2="60" y2="30"/>
+    <line x1="12" y1="38" x2="60" y2="38"/><line x1="12" y1="46" x2="60" y2="46"/>
+    <line x1="12" y1="54" x2="60" y2="54"/>
+  </g>
+  <ellipse cx="36" cy="50" rx="7.5" ry="5.4" transform="rotate(-20 36 50)" fill="#ececee"/>
+  <ellipse cx="36" cy="42" rx="7.5" ry="5.4" transform="rotate(-20 36 42)" fill="#39ff14"/>
+  <ellipse cx="36" cy="34" rx="7.5" ry="5.4" transform="rotate(-20 36 34)" fill="#2442a8" stroke="#ffffff" stroke-opacity=".55" stroke-width="1"/>
+  <line x1="42.6" y1="33" x2="42.6" y2="12" stroke="#ececee" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,21 @@
+{"kind":"header","v":1,"port":"Synthetic Keyboard","started":"2026-07-28T09:00:00-04:00"}
+{"kind":"mark","t":0.0,"label":"item:0:prompt"}
+{"kind":"ev","t":1.0021,"type":"note_on","note":55,"vel":88,"ch":0}
+{"kind":"ev","t":1.0189,"type":"note_on","note":59,"vel":81,"ch":0}
+{"kind":"ev","t":1.0312,"type":"note_on","note":62,"vel":85,"ch":0}
+{"kind":"ev","t":1.0446,"type":"note_on","note":65,"vel":93,"ch":0}
+{"kind":"mark","t":1.3502,"label":"item:0:attempt:ok"}
+{"kind":"mark","t":1.3504,"label":"item:0:passed"}
+{"kind":"mark","t":1.3506,"label":"item:1:prompt"}
+{"kind":"ev","t":2.0113,"type":"note_off","note":55,"vel":0,"ch":0}
+{"kind":"ev","t":2.0187,"type":"note_off","note":59,"vel":0,"ch":0}
+{"kind":"ev","t":2.0241,"type":"note_off","note":62,"vel":0,"ch":0}
+{"kind":"ev","t":2.0298,"type":"note_off","note":65,"vel":0,"ch":0}
+{"kind":"ev","t":3.4102,"type":"note_on","note":60,"vel":95,"ch":0}
+{"kind":"ev","t":3.4219,"type":"note_on","note":64,"vel":90,"ch":0}
+{"kind":"ev","t":3.4337,"type":"note_on","note":67,"vel":87,"ch":0}
+{"kind":"mark","t":3.7401,"label":"item:1:attempt:ok"}
+{"kind":"mark","t":3.7403,"label":"item:1:passed"}
+{"kind":"ev","t":4.2015,"type":"note_off","note":60,"vel":0,"ch":0}
+{"kind":"ev","t":4.2101,"type":"note_off","note":64,"vel":0,"ch":0}
+{"kind":"ev","t":4.2190,"type":"note_off","note":67,"vel":0,"ch":0}

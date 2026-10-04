@@ -1,0 +1,12 @@
+# A traditional form, not a composition: the 12-bar jazz blues as players comp it in F.
+title: Jazz Blues in F
+composer: traditional form
+style: Medium Swing
+time: 4/4
+key: F
+checked: 2026-10-04
+
+[A]
+| F7 | Bb7 | F7 | C-7 F7 |
+| Bb7 | Bo7 | F7 | A-7 D7 |
+| G-7 | C7 | F7 D7 | G-7 C7 |

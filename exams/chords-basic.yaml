@@ -1,0 +1,25 @@
+# Exam definition — YAML v1 (CONTRACTS.md §2)
+id: chords-basic
+title: Sevenths, inversions and a few colours
+defaults: {level: loose, debounce_ms: 300}
+items:
+  - prompt: "Play a G7 — any voicing"
+    check: {chord: "G7"}
+  - prompt: "C major — any voicing"
+    check: {chord: "C"}
+  - prompt: "Am7 — any voicing"
+    check: {chord: "Am7"}
+  - prompt: "Fmaj7 — any voicing"
+    check: {chord: "Fmaj7"}
+  - prompt: "Dm7 — nothing but chord tones"
+    check: {chord: "Dm7", level: strict}
+  - prompt: "C/E — first inversion"
+    check: {chord: "C/E", level: inversion}
+  - prompt: "F#m7b5 — any voicing"
+    check: {chord: "F#m7b5"}
+  - prompt: "Bb7 — any voicing"
+    check: {chord: "Bb7"}
+  - prompt: "Esus4 — any voicing"
+    check: {chord: "Esus4"}
+  - prompt: "G/B — first inversion"
+    check: {chord: "G/B", level: inversion}

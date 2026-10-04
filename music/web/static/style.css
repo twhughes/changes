@@ -1,0 +1,153 @@
+:root {
+  --bg: #111;
+  --panel: #17171a;
+  --line: #2a2a30;
+  --ink: #e8e8ea;
+  --dim: #8b8b95;
+  --accent: #7aa2f7;
+  --good: #22c55e;
+  --bad: #ef4444;
+  --warn: #eab308;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* ── shell ─────────────────────────────────────────────── */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.brand {
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: var(--accent);
+}
+
+.tabs { display: flex; gap: 6px; flex: 1; }
+.tabs[hidden] { display: none; }      /* one view: no tab bar (main.js) */
+
+.tabs button {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--dim);
+  padding: 5px 12px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.tabs button:hover { color: var(--ink); }
+.tabs button.active { color: var(--ink); border-color: var(--line); background: #1e1e23; }
+
+.chip {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--dim);
+  white-space: nowrap;
+  max-width: 40vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chip.on { color: var(--good); border-color: #1d4a2e; }
+.chip.off { color: var(--dim); }
+
+main { padding: 22px 18px 40px; max-width: 1100px; margin: 0 auto; }
+
+/* ── trainer ───────────────────────────────────────────── */
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+select, .btn {
+  background: #1e1e23;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 7px 14px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn:hover:not(:disabled) { border-color: var(--accent); }
+.btn:disabled { opacity: 0.4; cursor: default; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #10131c; font-weight: 600; }
+
+.card {
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0;
+  padding: 26px 22px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+/* the trainer's "Show keys" switch, beside Start / Skip / Stop */
+.t-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--dim);
+  cursor: pointer; user-select: none; }
+.t-toggle input { margin: 0; accent-color: var(--accent); }
+.t-toggle[hidden] { display: none; }
+/* how far through the session: a thin bar on the card's bottom edge, no numbers */
+.t-progress { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--accent);
+  opacity: .75; transition: width 160ms linear; }
+
+.chord {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.chord.idle { color: var(--dim); font-size: 34px; font-weight: 400; }
+/* Sight-reading prompts: the same slot holds engraved notes instead of a name. */
+.chord.staff { font-size: 0; line-height: 0; }
+.chord.staff svg { display: block; max-width: 100%; height: auto; }
+
+.prompt-line { color: var(--dim); margin-top: 8px; font-size: 15px; }
+
+
+.verdict { margin-top: 16px; font-size: 15px; min-height: 22px; font-variant-numeric: tabular-nums; }
+.verdict.ok { color: var(--good); }
+.verdict.no { color: var(--bad); }
+
+/* per-card grade breakdown (trainer `passed` events) */
+.grade { margin-top: 10px; font-size: 14px; min-height: 20px; color: var(--dim);
+         font-variant-numeric: tabular-nums; }
+.grade .ease { font-weight: 600; padding: 1px 8px; border-radius: 999px;
+               border: 1px solid var(--line); }
+.grade .t-good { color: var(--good); }
+.grade .t-warn { color: var(--warn); }
+.grade .t-bad { color: var(--bad); }
+
+.piano-wrap { width: 100%; overflow-x: auto; }
+svg.piano { width: 100%; min-width: 640px; display: block; }
+svg.piano rect { transition: fill 90ms linear; }
+svg.piano text { fill: #9a9aa4; font-size: 7px; user-select: none; }
+/* ⌨ musical typing: the computer key on each piano key it plays (keyboard.js) */
+svg.piano text.kb-letter { fill: #202027; font-size: 13px; font-weight: 600; }
+svg.piano text.kb-letter.on-black { fill: #f4f4f6; font-size: 10px; }
+
+.summary { font-size: 15px; line-height: 1.7; }
+.summary h3 { margin: 0 0 8px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--dim); }
+
+/* header sound controls */
+.sound { display: inline-flex; gap: .4rem; align-items: center; margin-left: auto; margin-right: .6rem; font-size: .85rem; }
+#srs-sel { max-width: 150px; }
+.sound select, .sound button { background: #111; color: inherit; border: 1px solid #333; border-radius: 4px; padding: .15rem .4rem; font: inherit; }
+.sound button:hover { border-color: #666; }
+.sound button.on { border-color: var(--good); color: var(--good); }

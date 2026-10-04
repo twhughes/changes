@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "exam_id": "synthetic-basics",
+  "exam_sha": "21df2bf9622cc2a0",
+  "theory_version": "0.1.0",
+  "started": "2026-07-28T09:00:00-04:00",
+  "items": [
+    {
+      "prompt": "Play a G7 — any voicing",
+      "check": {
+        "chord": "G7",
+        "level": "loose",
+        "debounce_ms": 300
+      },
+      "attempts": [
+        {
+          "ok": true,
+          "missing": [],
+          "extra": [],
+          "bass_ok": null,
+          "played": [55, 59, 62, 65],
+          "latency_s": 1.045,
+          "summary": "G7 ✓  (G3 B3 D4 F4)"
+        }
+      ],
+      "passed": true,
+      "skipped": false,
+      "latency_s": 1.045,
+      "note": null,
+      "span": null
+    },
+    {
+      "prompt": "C major — any voicing",
+      "check": {
+        "chord": "C",
+        "level": "loose",
+        "debounce_ms": 300
+      },
+      "attempts": [
+        {
+          "ok": true,
+          "missing": [],
+          "extra": [],
+          "bass_ok": null,
+          "played": [60, 64, 67],
+          "latency_s": 2.083,
+          "summary": "C ✓  (C4 E4 G4)"
+        }
+      ],
+      "passed": true,
+      "skipped": false,
+      "latency_s": 2.083,
+      "note": "clean, no hesitation",
+      "span": null
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "total": 2,
+    "duration_s": 4.3,
+    "mean_latency_s": 1.56
+  }
+}

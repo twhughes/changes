@@ -1,0 +1,21 @@
+title: Very Early
+composer: Bill Evans
+style: Medium Waltz
+time: 3/4
+key: C
+form: A A B Ending
+
+[A]
+| Cmaj7 | Bb7 | Ebmaj7 | Ab7 |
+| Dbmaj7 | G7 | Cmaj7 | Bb7(#11) |
+| Dmaj7 | A-7 | F#-7 | B7b9 |
+| E-9 | Ab7 | Dbmaj7 | 1. G7 | 2. G7#5 |
+
+[B]
+| Bmaj7 | Ab7 | Dbmaj7 | Bb7 |
+| Bmaj7 | G7 | Cmaj7 | Ab7 |
+| Dbmaj7 | G7 | Cmaj7 | A7b5(b9) |
+| D-7:2 E-7:1 | Fmaj7:1 G7:2 | D-7:2 E-7:1 | Fmaj7:1 G7:2 |
+
+[Ending]
+| D-7/C:2 C#-7:1 | C#-7:1 Bbmaj7:1 Gmaj7:1 | Bmaj7 | |

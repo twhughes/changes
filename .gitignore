@@ -1,0 +1,28 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+sessions/
+bundles/
+# songs library: Tyler's charts + scanned Real Book pages (copyrighted) — data, never in git
+/songs/
+# demo captures show a scanned Real Book page (copyrighted): local until Tyler decides
+tools/songs-demo*.gif
+tools/songs-demo*.mp4
+analysis/.venv*/
+.pytest_cache/
+.ruff_cache/
+venv/
+.DS_Store
+node_modules/
+*.noindex/
+analysis/.work/
+analysis/.venv/
+music/sound/sf2/*.sf2
+# Logic template package: keep the project data, drop its (large) recorded audio
+music/sound/logic_template/EPiano.logicx/Media/
+# the static page build (tools/build_site.py) — rebuilt, never committed
+/site/
+
+# the public repo checkout (github.com/twhughes/changes), made by tools/export_public.py — its own git repo
+/public/
