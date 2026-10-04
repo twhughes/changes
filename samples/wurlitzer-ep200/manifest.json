@@ -1,0 +1,440 @@
+{
+  "name": "Wurlitzer EP200 (Greg Sullivan)",
+  "license": "CC-BY 3.0 Unported",
+  "source": "https://github.com/sfzinstruments/GregSullivan.E-Pianos (Wurlitzer EP200)",
+  "samples": [
+    {
+      "file": "wav/a1pp.wav",
+      "note": 33,
+      "vel_lo": 1,
+      "vel_hi": 37,
+      "tune_cents": -5,
+      "gain_db": -3.2,
+      "loop": null
+    },
+    {
+      "file": "wav/a1pp.wav",
+      "note": 33,
+      "vel_lo": 1,
+      "vel_hi": 37,
+      "tune_cents": -5,
+      "gain_db": -3.5,
+      "loop": null
+    },
+    {
+      "file": "wav/ab2pp.wav",
+      "note": 44,
+      "vel_lo": 1,
+      "vel_hi": 37,
+      "tune_cents": -8,
+      "gain_db": -4.2,
+      "loop": null
+    },
+    {
+      "file": "wav/eb3pp.wav",
+      "note": 51,
+      "vel_lo": 1,
+      "vel_hi": 37,
+      "tune_cents": -10,
+      "gain_db": -4.7,
+      "loop": null
+    },
+    {
+      "file": "wav/ab3pp.wav",
+      "note": 56,
+      "vel_lo": 1,
+      "vel_hi": 37,
+      "tune_cents": -12,
+      "gain_db": -5.5,
+      "loop": null
+    },
+    {
+      "file": "wav/db4pp.wav",
+      "note": 61,
+      "vel_lo": 1,
+      "vel_hi": 37,
+      "tune_cents": -2,
+      "gain_db": -5.2,
+      "loop": null
+    },
+    {
+      "file": "wav/g4pp.wav",
+      "note": 67,
+      "vel_lo": 1,
+      "vel_hi": 37,
+      "tune_cents": -2,
+      "gain_db": -5.2,
+      "loop": null
+    },
+    {
+      "file": "wav/db5pp.wav",
+      "note": 73,
+      "vel_lo": 1,
+      "vel_hi": 37,
+      "tune_cents": -5,
+      "gain_db": -5.4,
+      "loop": null
+    },
+    {
+      "file": "wav/g5mp.wav",
+      "note": 79,
+      "vel_lo": 1,
+      "vel_hi": 37,
+      "tune_cents": -8,
+      "gain_db": -5.4,
+      "loop": null
+    },
+    {
+      "file": "wav/db6mp.wav",
+      "note": 85,
+      "vel_lo": 1,
+      "vel_hi": 37,
+      "tune_cents": 6,
+      "gain_db": -5.6,
+      "loop": null
+    },
+    {
+      "file": "wav/ab6mp.wav",
+      "note": 92,
+      "vel_lo": 1,
+      "vel_hi": 37,
+      "tune_cents": 2,
+      "gain_db": -5.7,
+      "loop": null
+    },
+    {
+      "file": "wav/a1mp.wav",
+      "note": 33,
+      "vel_lo": 38,
+      "vel_hi": 65,
+      "tune_cents": -5,
+      "gain_db": -3.8,
+      "loop": null
+    },
+    {
+      "file": "wav/e2mp.wav",
+      "note": 40,
+      "vel_lo": 38,
+      "vel_hi": 65,
+      "tune_cents": -4,
+      "gain_db": -4.2,
+      "loop": null
+    },
+    {
+      "file": "wav/a2mp.wav",
+      "note": 45,
+      "vel_lo": 38,
+      "vel_hi": 65,
+      "tune_cents": -2,
+      "gain_db": -4.7,
+      "loop": null
+    },
+    {
+      "file": "wav/eb3mp.wav",
+      "note": 51,
+      "vel_lo": 38,
+      "vel_hi": 65,
+      "tune_cents": -9,
+      "gain_db": -5.1,
+      "loop": null
+    },
+    {
+      "file": "wav/ab3mp.wav",
+      "note": 56,
+      "vel_lo": 38,
+      "vel_hi": 65,
+      "tune_cents": -8,
+      "gain_db": -5.3,
+      "loop": null
+    },
+    {
+      "file": "wav/db4mp.wav",
+      "note": 61,
+      "vel_lo": 38,
+      "vel_hi": 65,
+      "tune_cents": 4,
+      "gain_db": -5.3,
+      "loop": null
+    },
+    {
+      "file": "wav/gb4mp.wav",
+      "note": 66,
+      "vel_lo": 38,
+      "vel_hi": 65,
+      "tune_cents": 7,
+      "gain_db": -5.4,
+      "loop": null
+    },
+    {
+      "file": "wav/b4mp.wav",
+      "note": 71,
+      "vel_lo": 38,
+      "vel_hi": 65,
+      "tune_cents": -5,
+      "gain_db": -5.2,
+      "loop": null
+    },
+    {
+      "file": "wav/db5mp.wav",
+      "note": 73,
+      "vel_lo": 38,
+      "vel_hi": 65,
+      "tune_cents": 3,
+      "gain_db": -5.4,
+      "loop": null
+    },
+    {
+      "file": "wav/g5mp.wav",
+      "note": 79,
+      "vel_lo": 38,
+      "vel_hi": 65,
+      "tune_cents": -8,
+      "gain_db": -5.4,
+      "loop": null
+    },
+    {
+      "file": "wav/db6mp.wav",
+      "note": 85,
+      "vel_lo": 38,
+      "vel_hi": 65,
+      "tune_cents": 6,
+      "gain_db": -5.6,
+      "loop": null
+    },
+    {
+      "file": "wav/ab6mp.wav",
+      "note": 92,
+      "vel_lo": 38,
+      "vel_hi": 65,
+      "tune_cents": 2,
+      "gain_db": -5.7,
+      "loop": null
+    },
+    {
+      "file": "wav/a1f.wav",
+      "note": 33,
+      "vel_lo": 66,
+      "vel_hi": 89,
+      "tune_cents": -5,
+      "gain_db": -4.7,
+      "loop": null
+    },
+    {
+      "file": "wav/c2f.wav",
+      "note": 36,
+      "vel_lo": 66,
+      "vel_hi": 89,
+      "tune_cents": -7,
+      "gain_db": -5.0,
+      "loop": null
+    },
+    {
+      "file": "wav/f2f.wav",
+      "note": 41,
+      "vel_lo": 66,
+      "vel_hi": 89,
+      "tune_cents": -6,
+      "gain_db": -4.7,
+      "loop": null
+    },
+    {
+      "file": "wav/b2f.wav",
+      "note": 47,
+      "vel_lo": 66,
+      "vel_hi": 89,
+      "tune_cents": -8,
+      "gain_db": -5.0,
+      "loop": null
+    },
+    {
+      "file": "wav/e3f.wav",
+      "note": 52,
+      "vel_lo": 66,
+      "vel_hi": 89,
+      "tune_cents": -4,
+      "gain_db": -4.7,
+      "loop": null
+    },
+    {
+      "file": "wav/ab3f.wav",
+      "note": 56,
+      "vel_lo": 66,
+      "vel_hi": 89,
+      "tune_cents": -11,
+      "gain_db": -4.8,
+      "loop": null
+    },
+    {
+      "file": "wav/db4f.wav",
+      "note": 61,
+      "vel_lo": 66,
+      "vel_hi": 89,
+      "tune_cents": -2,
+      "gain_db": -4.8,
+      "loop": null
+    },
+    {
+      "file": "wav/ab4f.wav",
+      "note": 68,
+      "vel_lo": 66,
+      "vel_hi": 89,
+      "tune_cents": 0,
+      "gain_db": -5.0,
+      "loop": null
+    },
+    {
+      "file": "wav/db5f.wav",
+      "note": 73,
+      "vel_lo": 66,
+      "vel_hi": 89,
+      "tune_cents": 3,
+      "gain_db": -6.0,
+      "loop": null
+    },
+    {
+      "file": "wav/g5f.wav",
+      "note": 79,
+      "vel_lo": 66,
+      "vel_hi": 89,
+      "tune_cents": -7,
+      "gain_db": -5.9,
+      "loop": null
+    },
+    {
+      "file": "wav/db6f.wav",
+      "note": 85,
+      "vel_lo": 66,
+      "vel_hi": 89,
+      "tune_cents": 0,
+      "gain_db": -5.9,
+      "loop": null
+    },
+    {
+      "file": "wav/ab6f.wav",
+      "note": 92,
+      "vel_lo": 66,
+      "vel_hi": 89,
+      "tune_cents": 0,
+      "gain_db": -5.9,
+      "loop": null
+    },
+    {
+      "file": "wav/a1ff.wav",
+      "note": 33,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": -5,
+      "gain_db": -5.3,
+      "loop": null
+    },
+    {
+      "file": "wav/c2ff.wav",
+      "note": 36,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": -7,
+      "gain_db": -5.3,
+      "loop": null
+    },
+    {
+      "file": "wav/f2ff.wav",
+      "note": 41,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": -6,
+      "gain_db": -5.4,
+      "loop": null
+    },
+    {
+      "file": "wav/b2ff.wav",
+      "note": 47,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": -8,
+      "gain_db": -5.4,
+      "loop": null
+    },
+    {
+      "file": "wav/e3ff.wav",
+      "note": 52,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": -2,
+      "gain_db": -5.4,
+      "loop": null
+    },
+    {
+      "file": "wav/ab3ff.wav",
+      "note": 56,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": -8,
+      "gain_db": -5.4,
+      "loop": null
+    },
+    {
+      "file": "wav/db4ff.wav",
+      "note": 61,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": 2,
+      "gain_db": -5.4,
+      "loop": null
+    },
+    {
+      "file": "wav/e4ff.wav",
+      "note": 64,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": -3,
+      "gain_db": -5.4,
+      "loop": null
+    },
+    {
+      "file": "wav/g4ff.wav",
+      "note": 67,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": 3,
+      "gain_db": -5.4,
+      "loop": null
+    },
+    {
+      "file": "wav/db5ff.wav",
+      "note": 73,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": -1,
+      "gain_db": -3.5,
+      "loop": null
+    },
+    {
+      "file": "wav/g5ff.wav",
+      "note": 79,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": -7,
+      "gain_db": -4.9,
+      "loop": null
+    },
+    {
+      "file": "wav/db6f.wav",
+      "note": 85,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": 0,
+      "gain_db": -5.5,
+      "loop": null
+    },
+    {
+      "file": "wav/ab6f.wav",
+      "note": 92,
+      "vel_lo": 90,
+      "vel_hi": 127,
+      "tune_cents": 0,
+      "gain_db": -6.0,
+      "loop": null
+    }
+  ],
+  "release_s": 0.4
+}

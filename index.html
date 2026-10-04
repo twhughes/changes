@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="music-static" content="1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>music</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bar">
+    <span class="brand">music</span>
+    <nav class="tabs" id="tabs"></nav>
+    <span class="sound" id="sound">
+      <label>🔈 <select id="sound-sel" title="what plays your notes"></select></label>
+      <button id="twin-btn" hidden aria-expanded="false" title="adjust the S-1 twin's sound">⚙</button>
+      <label>🧠 <select id="srs-sel" title="where review cards live"></select></label>
+      <button id="typing-btn" title="musical typing: play from the computer keyboard (off)">🎹 Musical typing</button>
+    </span>
+    <span class="chip off" id="port-chip">no keyboard</span>
+  </header>
+  <main id="view-root"></main>
+  <script type="module" src="main.js?v=practice2"></script>
+</body>
+</html>
